@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .hidden-scrollbar {
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox 対応 */
+  }
+  .hidden-scrollbar::-webkit-scrollbar {
+    /* Chrome, Safari 対応 */
+    display: none;
+  }
+}
+
+html {
+  overflow-y:scroll;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.wikipedia_body p {
+  margin:8px 0px;
+  line-height: 2;
+}
+
+h1 {
+  @apply font-bold my-2;
+  @apply sm:text-2xl;
+}
+
+h2 {
+  @apply font-bold my-2;
+  @apply sm:text-xl;
+}
+
+h3 {
+  @apply font-bold;
+}
