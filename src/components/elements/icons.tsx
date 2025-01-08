@@ -13,7 +13,7 @@ export default function Icons({}) {
     <div className="flex justify-row ">
       <div className="flex-1"></div>
       <div className="flex-1 flex justify-row ">
-        <IconContext.Provider value={{size: '24px'}}>
+        <IconContext.Provider value={{color: "white", size: '24px'}}>
           <Link href="https://x.com/milstd1815" target="_brank">
             <BsTwitterX  />
           </Link>

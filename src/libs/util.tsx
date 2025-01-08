@@ -10,6 +10,7 @@ const BASE_NOTE_SITE_PATH:string      = '/novel/[novelId]/note/[noteId]';
 const BASE_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL;
 const BASE_INDEX_DATA_PATH: string    = BASE_DATA_URL + '[novelId]/_index.json';
 const BASE_EPISODE_DATA_PATH: string  = BASE_DATA_URL + '[novelId]/[episodeId].json';
+const BASE_EPISODE_IMAGE_PATH: string = BASE_DATA_URL + '[novelId]/images/[imageFile]';
 const BASE_GLOSSARY_DATA_PATH: string = BASE_DATA_URL + '[novelId]/note/_glossary.json';
 const BASE_NOTE_DATA_PATH: string     = BASE_DATA_URL + '[novelId]/note/[noteId].json';
 
@@ -67,6 +68,13 @@ export const getEpisodeDataPath = (
   episodeId:string
 ) => {
   return BASE_EPISODE_DATA_PATH.replace('[novelId]', novelId).replace('[episodeId]', episodeId);
+};
+
+export const getEpisodeImagePath = (
+  novelId:string,
+  imageFile:string
+) => {
+  return BASE_EPISODE_IMAGE_PATH.replace('[novelId]', novelId).replace('[imageFile]', imageFile);
 };
 
 export const getGlossaryDataPath = (
