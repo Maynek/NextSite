@@ -35,8 +35,8 @@ export default async function EpisodeContainer({
         </div>
         { imagePath ?
           <div className="flex justify-center items-center"> 
-            <Image src={imagePath} alt={data.image} width={512} height={512}/>
-          </div>   
+            <Image src={imagePath} alt={data.image} width={360} height={360}/>
+          </div>         
           :
           <></>
         }
