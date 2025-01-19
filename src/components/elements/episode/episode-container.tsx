@@ -21,9 +21,12 @@ export default async function EpisodeContainer({
     return ( <LoadError /> );
   } else {
     const indexPath = getIndexSitePath(novelId);
-    const imagePath = data.image ? getEpisodeImagePath(novelId, data.image) : null;
     const prevPath = data.prevId ? getEpisodeSitePath(novelId, data.prevId) : null;
     const nextPath = data.nextId ? getEpisodeSitePath(novelId, data.nextId) : null;
+    const imagePath = data.imageFile ? getEpisodeImagePath(novelId, data.imageFile) : null;
+    const imageWidth = data.imageWidth ? data.imageWidth : 360;
+    const imagHeight = data.imageHeight ? data.imageHeight : 360;
+
 
     return (
       <div className="flex flex-col h-full">
@@ -35,7 +38,7 @@ export default async function EpisodeContainer({
         </div>
         { imagePath ?
           <div className="flex justify-center items-center"> 
-            <Image src={imagePath} alt={data.image} width={360} height={360}/>
+            <Image src={imagePath} alt={data.imageFile} width={imageWidth} height={imagHeight}/>
           </div>         
           :
           <></>
