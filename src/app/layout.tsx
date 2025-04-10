@@ -5,6 +5,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import AnimatePage from '@/components/elements/animate-page'
 import Header from "@/components/layouts/header"
 import Footer from "@/components/layouts/footer"
@@ -21,6 +22,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
   return (
     <html lang="ja" className="h-full">
       <body className={"h-full bg-gray-200 " + notoSansJP.className} >
@@ -42,6 +45,7 @@ export default function RootLayout({
             <Footer />
           </footer>
         </div>
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );
