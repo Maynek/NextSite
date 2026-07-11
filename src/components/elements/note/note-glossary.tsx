@@ -44,7 +44,11 @@ export default async function NoteGlossary({
                       hover:text-red-600 hover:underline
                     `}
                   >
-                    <Link href={getNoteSitePath(novelId, id)} scroll={false}>{title}</Link>
+                    <Link
+                      href={getNoteSitePath(novelId, id)}
+                      target='next_note'
+                      scroll={false}>{title}
+                    </Link>
                   </li>
                 ))}
               </ul>
